@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <script>
+    var appHostOrigin = 'http://localhost:5000/';
+    var inputMsg = {
+        'input': {
+            'name': 'Mike',
+            'email': 'example@ibm.com',
+            'message': 'I would like to submit a ticket'
+        },
+        'name': 'cfgInputData'
+    };
+    //When opening in a separate window:
+    var newWindow = window.open('https://cpd-ibm-cloudpaks.itzroks-060001mj6t-dyzjuy-4b4a324f027aea19c5cbc0c3275c4656-0000.eu-de.containers.appdomain.cloud/ae-workspace/Test1(T1)'); //open the new window with the app
+    //add event listener to the window to send the inputs once loaded
+    newWindow.addEventListener('load', () => {
+      newWindow.postMessage(inputMsg, appHostOrigin);
+    });
+    window.addEventListener('message', (event) => {
+    var message = JSON.parse(event.data);
+    if (message.name === 'cfgOutputData') {
+        //do something with the output data
+        console.log(" adddddd ");
+        console.log(message.output);
+        }
+    });
+
+
+    </script>
+</body>
+</html>
