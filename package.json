@@ -1,17 +1,18 @@
 {
-  "name": "nodejs-starter",
-  "version": "2.0.0",
-  "description": "Simple Node.js application",
-  "license": "EPL-2.0",
+  "name": "simple-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "debug": "node --inspect=${DEBUG_PORT} server.js",
-    "test": "node test/test.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1",
-    "pino": "^8.5.0",
-    "pino-http": "^8.2.0",
-    "prom-client": "^14.1.0"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7"
   }
 }
